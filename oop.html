@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OOP</title>
+</head>
+<body>
+
+    <h1>Object Oriented Programming in Javascript</h1>
+    <p id ="house1"></p>
+    <p id ="house2"></p>
+    <p id ="house3"></p>
+    <p id ="house4"></p><br><br><br>
+    
+
+    <style>
+
+      body {
+        background-color: antiquewhite;
+      }
+      h1 {
+        background-color: aqua;
+      }
+      #house1, #house2, #house3, #house4, #houses {
+        background-color: dodgerblue;
+        color: white;
+      }
+
+    </style>
+
+
+  <script>
+
+    function House(stories, squareFoot, color, year, bedrooms, bathrooms, price) {
+      this.stories = stories,
+      this.squareFoot = squareFoot,
+      this.color = color,
+      this.year = year, 
+      this.bedrooms = bedrooms, 
+      this.bathrooms = bathrooms,
+      this.price = price,
+      this.summary = () => {return `This house is a ${stories} story home and is ${squareFoot} square feet. It has ${bedrooms} bedrooms and ${bathrooms} bathrooms. It was built in ${year} and is ${color}. It costs $${price}.`}
+    }
+
+    const house1 = new House(1, 1285, "beige", 2018, 3, 2, 285000);
+    const house2 = new House(1, 1560, "brown", 1983, 3, 3, 345000);
+    const house3 = new House(2, 2975, "tan", 2008, 4, 3, 415000);
+    const house4 = new House(1, 1130, "white", 1961, 2, 2, 215000);
+
+    document.getElementById("house1").innerHTML = house1.summary();
+    document.getElementById("house2").innerHTML = house2.summary();
+    document.getElementById("house3").innerHTML = house3.summary();
+    document.getElementById("house4").innerHTML = house4.summary();
+
+  </script>
+</body>
+</html>
